@@ -39,7 +39,7 @@ class Select extends Component {
               <select className="select" value={this.state.value} onChange={this.handleChange}>
                 {
                   (films && films.length > 0) && films.map((film) => {
-                   return (<option value="${film.value}">{film.title}</option>);
+                   return (<option key="${film.value}" value="${film.value}">{film.title}</option>);
                   })
                  }
                </select>
