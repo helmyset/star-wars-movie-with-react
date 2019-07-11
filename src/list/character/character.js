@@ -39,7 +39,7 @@ class Character extends Component {
               characters.map(char => {
                 const { name } = char;
                 return (
-                  <div key={name}>
+                  <div key={name} >
                     <p>Name: {name}</p>
 
                     <hr />

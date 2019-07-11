@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';
 import List from './list/list.js';
+import Navbar from './navbar/navbar.js';
+import Select from './list/select/select.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <List />
-      </header>
+    <div>
+        <Navbar />
+        <Select />
+        <List />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Planets from './planet/planet.js';
 import Species from './species/species.js';
 import Starships from './starship/starship.js';
 import Vehicles from './vehicles/vehicles.js';
-
+import './list.scss';
 class List extends Component {
   constructor(props) {
     super(props);
@@ -32,28 +32,27 @@ class List extends Component {
     this.fetchFilms();
   }
 
+  handleChange(event) {
+       this.setState({value: event.target.data});
+     }
+
   render() {
     const { isLoading, films, error } = this.state;
       return (
         <React.Fragment>
-            <h1>Star Wars</h1>
               {error ? <p>{error.message}</p> : null}
               {!isLoading ? (
               films.map(film => {
                 const { title, episode_id, director, producer, release_date } = film;
                 return (
-                  <div key={title}>
-                    <p>Tittle: {title}</p>
+                  <div >
+                  <div key={title} className="body card">
+                    <h3>Tittle: {title}</h3>
                     <p>episode id: {episode_id}</p>
                     <p>director: {director}</p>
                     <p>producer: {producer}</p>
                     <p>release date: {release_date}</p>
-                    <p>caracter: <Character /></p>
-                    <p>planet: <Planets /></p>
-                    <p>starships: <Starships /></p>
-                    <p>vehicles: <Vehicles /></p>
-                    <p>species: <Species /></p>
-                    <hr />
+                  </div>
                   </div>
                 );
               })
